@@ -18,6 +18,7 @@ Up to now, we have collected and tested with four kinds of lidar SLAM, including
 
 <div align="center">
 <img src="https://user-images.githubusercontent.com/58619142/181913836-e9d73f88-0804-47b0-bddc-5d68426b37e8.png"
+     width="70%"
      alt="Autonomous UAV system overview"/>
 <br>
 Autonomous UAV system overview
@@ -39,6 +40,7 @@ In this project, we take more concern on the lidar or lidar-inertial fusion SLAM
 
 <div align="center">
 <img src="https://user-images.githubusercontent.com/58619142/181915418-cd55e434-fdb4-4f30-98fb-386c2b324990.PNG"
+     width="70%"
      alt="Lidar-inertial SLAM system pipeline"/>
 <br>
 Lidar-inertial SLAM system pipeline
