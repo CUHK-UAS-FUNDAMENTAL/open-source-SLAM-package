@@ -1,5 +1,5 @@
 # open-source-SLAM-package
-A open-source SLAM intergration package for [*CUHK UAS fundamental group*](http://www.mae.cuhk.edu.hk/~usr/)
+An open-source SLAM integration package for [*CUHK UAS fundamental group*](http://www.mae.cuhk.edu.hk/~usr/)
 
 ## Menu
 
@@ -18,7 +18,7 @@ A open-source SLAM intergration package for [*CUHK UAS fundamental group*](http:
       - [4.2.3 download LIO-SAM and build it](#423-download-lio-sam-and-build-it)
       - [4.2.4 download Fast-LIO and build it](#424-download-fast-lio-and-build-it)
   * [5. Quick Test](#5-quick-test)
-    + [5.1 Test with PX4 Fundmental  Simulator](#51-test-with-px4-fundmental--simulator)
+    + [5.1 Test with PX4 Fundamental  Simulator](#51-test-with-px4-fundmental--simulator)
   * [6. Updates](#6-updates)
   * [7. TODO](#7-todo)
   * [8. Related works](#8-related-works)
@@ -31,13 +31,13 @@ A open-source SLAM intergration package for [*CUHK UAS fundamental group*](http:
 ![image](https://user-images.githubusercontent.com/58619142/181909310-37a21609-c84e-4939-9f0b-bd07619eb319.png)
 
 
-This package presents a set of state-of-art open-sourced lidar-based Simultaneous  Localization and Mapping(SLAM) software for UAV localization in a 3D factory environment, targeting for:
+This package presents a set of state-of-art open-sourced lidar-based Simultaneous  Localization and Mapping(SLAM) software for UAV localization in a 3D factory environment, targeting:
 * Lightweight(both hardware and software);
 * Robust;
 * High precision;
-* integration with other algorithms(navigation, task planning and so on).
+* integration with other algorithms(navigation, task planning, and so on).
 
-Up to now, we have collected and tested with four kinds of lidar SLAM, including pure lidar SLAM algorithms and lidar-inertial SLAM algorithms. Integration of autonomous UAV software and development of low-cost SLAM algorithm will be our future work directions.
+Up to now, we have collected and tested four kinds of lidar SLAM, including pure lidar SLAM algorithms and lidar-inertial SLAM algorithms. Integration of autonomous UAV software and the development of a low-cost SLAM algorithm will be our future work directions.
 
 ## 2. Overall Architecture
 
@@ -51,7 +51,7 @@ Autonomous UAV system overview
 
 <br/>
 
-The SLAM module plays a role in perceiving and analyzing environment information gathered by navigation sensors. In a GPS-deny environment, Unmanned vehicles depend on the SLAM algorithm to get accuracy localization information. In general, SLAM algorithms can be divided into lidar SLAM and visual SLAM. The visual SLAM algorithm is low-cost and lightweight, which benefits from camera sensors. However, visual SLAM suffers mostly from illumination variation and motion distortion. The lidar SLAM methods, by contrast, have a stable performance in challanging environment. This is one important reason why engineers prefer lidar SLAM whether in autonomous driving or service robots. 
+The SLAM module plays a role in perceiving and analyzing environment information gathered by navigation sensors. In a GPS-deny environment, Unmanned vehicles depend on the SLAM algorithm to get accurate localization information. In general, SLAM algorithms can be divided into lidar SLAM and visual SLAM. The visual SLAM algorithm is low-cost and lightweight, which benefits from camera sensors. However, visual SLAM suffers mostly from illumination variation and motion distortion. The lidar SLAM methods, by contrast, have a stable performance in a challenging environment. This is one important reason why engineers prefer lidar SLAM whether in autonomous driving or service robots. 
 
 <br/>
 
@@ -85,7 +85,7 @@ Here is a summary table for four lidar SLAM methods in our package. As shown in 
 | Fast-LIO2 | &#10004; | &#10004; | direct | iterated Kalman filter | &#10006; | Lightweight | Intel/ARM |
 
 <div align="center">
-Table 1: A comparision of different SLAM methods in this package 
+Table 1: A comparison of different SLAM methods in this package 
 </div>
 
 ## 4. Setup Guide
@@ -108,7 +108,7 @@ Follow [Ceres Installation](http://ceres-solver.org/installation.html).
 2. PCL
 Follow [PCL Installation](http://www.pointclouds.org/downloads/linux.html).
 3. Trajectory visualization
-For visualization purpose, this package uses hector trajectory sever, you may install the package by 
+For a visualization purpose, this package uses hector trajectory sever, you may install the package by 
 ```
 sudo apt-get install ros-melodic-hector-trajectory-server
 ```
@@ -139,7 +139,7 @@ Again, type the following command:
   Follow [livox_ros_driver Installation](https://github.com/Livox-SDK/livox_ros_driver).
   
   *Remarks:*
-- Since the FAST-LIO must support Livox serials LiDAR firstly, so the **livox_ros_driver** must be installed and **sourced** before run any FAST-LIO luanch file.
+- Since the FAST-LIO must support Livox serials LiDAR firstly, so the **livox_ros_driver** must be installed and **sourced** before running any FAST-LIO launch file.
 - How to source? The easiest way is add the line ``` source $Licox_ros_driver_dir$/devel/setup.bash ``` to the end of file ``` ~/.bashrc ```, where ``` $Licox_ros_driver_dir$ ``` is the directory of the livox ros driver workspace (should be the ``` ws_livox ``` directory if you completely followed the livox official document).
 
   
@@ -198,17 +198,17 @@ Clone the repository and catkin_make:
 
 ## 5. Quick Test
 
-### 5.1 Test with PX4 Fundmental  Simulator
+### 5.1 Test with PX4 Fundamental  Simulator
 
-The PX4 Fundmental  Simulator is a UAV simulator developed by [yizhou Chen 陈奕州](https://github.com/JINXER000). If you are not  familiar with this simulator, I recommend that you get start with this [wiki](https://github.com/JINXER000/FundamentalSimulatorPX4/wiki). Now,  the simulator is still under revision. More details can be seen [here](https://github.com/CUHK-UAS-FUNDAMENTAL/FundamentalSimulatorPX4/tree/xtdrone/gzx_dev).
+The PX4 Fundamental  Simulator is a UAV simulator developed by [yizhou Chen 陈奕州](https://github.com/JINXER000). If you are not familiar with this simulator, I recommend that you get to start with this [wiki](https://github.com/JINXER000/FundamentalSimulatorPX4/wiki). Now,  the simulator is still under revision. More details can be seen [here](https://github.com/CUHK-UAS-FUNDAMENTAL/FundamentalSimulatorPX4/tree/xtdrone/gzx_dev).
 
 ![simulator environment](https://user-images.githubusercontent.com/58619142/182297052-886127c5-dbb1-455f-8755-402507335062.png)
 
 <div align="center">
-Figure 2:  PX4 fundmental  simulator
+Figure 2:  a factory environment in PX4 fundamental simulator
 </div>
 
-Users can remote control a small drone to explore simulation environment(e.g., a factory). Meanwhile, the pose of UAV and a point cloud map incremently constucted will be outputed by SLAM algorithms.  The program runs in the following order:
+Users can remotely control a small drone to explore a simulation environment(e.g., a factory). Meanwhile, the pose of UAV and a point cloud map incrementally constructed will be output by SLAM algorithms.  The program runs in the following order:
 
 1. start the PX4 simulator
 ```bash
@@ -277,7 +277,7 @@ roslaunch lio_sam run.launch
 
  * F-LOAM
 
-[F-LOAM : Fast LiDAR Odometry and Mapping](https://github.com/wh200720041/floam)
+[F-LOAM: Fast LiDAR Odometry and Mapping](https://github.com/wh200720041/floam)
  
 * LIO-SAM
 
