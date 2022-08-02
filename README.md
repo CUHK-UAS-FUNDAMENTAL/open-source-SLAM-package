@@ -136,6 +136,25 @@ Again, type the following command:
   
 ### Compilation
 
+Firstly, you need to create a ros workspace and initial it. 
+Open a new terminal and type the following command：
+  ```bash
+  mkdir 3d_SLAM_ws && cd 3d_SLAM_ws
+  mkdir src && cd src
+  catkin_init_workspace
+  cd .. && catkin_make
+  ```
+
+#### download A-LOAM and build it 
+Clone the repository and catkin_make:
+```
+    cd ~/catkin_ws/src
+    git clone https://github.com/CUHK-UAS-FUNDAMENTAL/A-LOAM.git
+    cd ../
+    catkin_make
+    source ~/catkin_ws/devel/setup.bash
+```
+
 ## Quick Test
 
 ## Updates
