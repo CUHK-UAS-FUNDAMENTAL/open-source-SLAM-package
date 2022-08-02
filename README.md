@@ -189,11 +189,19 @@ Clone the repository and catkin_make:
 
 ## 5. Quick Test
 
+### 5.1 Test with PX4 Fundmental  Simulator
+
+The PX4 Fundmental  Simulator is a UAV simulator developed by [Chen yizhou](https://github.com/JINXER000). If you are not  familiar with this simulator, I recommend that you get start by  following this [wiki](https://github.com/JINXER000/FundamentalSimulatorPX4/wiki).  The intergration of algorithms in simulator will be based on [here](https://github.com/CUHK-UAS-FUNDAMENTAL/FundamentalSimulatorPX4/tree/xtdrone/gzx_dev).
+
+
+![simulator environment](https://user-images.githubusercontent.com/58619142/182297052-886127c5-dbb1-455f-8755-402507335062.png)
+
 ## 6. Updates
 
 ## 7. TODO
 
 ## 8. Related works
+
 
 
 
