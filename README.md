@@ -90,6 +90,15 @@ Here is a summary table for four lidar SLAM methods in our package. As shown in 
 <div align="center">
 Table 1: A comparison of different SLAM methods in this package 
 </div>
+<br>
+
+> A-LOAM is an Advanced implementation of LOAM (J. Zhang and S. Singh. LOAM: Lidar Odometry and Mapping in Real-time), which uses Eigen and Ceres Solver to simplify code structure. This code is modified from LOAM. This code is clean and simple without complicated mathematical derivation and redundant operations. It is a good learning material for SLAM beginners.
+
+> F-LOAM is an optimized version of A-LOAM and LOAM with the computational cost reduced by up to 3 times.
+
+> LIO-SAM is a real-time lidar-inertial odometry package developed by [Tixiao Shan](https://github.com/TixiaoShan). The biggest feature of LIO-SAM is that it can handle aggressive rotation.
+
+> FAST-LIO (Fast LiDAR-Inertial Odometry) is a computationally efficient and robust LiDAR-inertial odometry package. It fuses LiDAR feature points with IMU data using a tightly-coupled iterated extended Kalman filter to allow robust navigation in fast-motion, noisy or cluttered environments where degeneration occurs
 
 ## 4. Setup Guide
 
