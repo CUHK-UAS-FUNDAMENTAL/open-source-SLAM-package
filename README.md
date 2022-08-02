@@ -28,7 +28,7 @@ An open-source SLAM integration package for [*CUHK UAS fundamental group*](http:
 
 ## 1. Introduction
 
-![image](https://user-images.githubusercontent.com/58619142/181909310-37a21609-c84e-4939-9f0b-bd07619eb319.png)
+![image](https://user-images.githubusercontent.com/58619142/182330364-2e35f0b0-6fae-4314-a9b9-2444ce8b64a7.png)
 
 
 This package presents a set of state-of-art open-sourced lidar-based Simultaneous  Localization and Mapping(SLAM) software for UAV localization in a 3D factory environment, targeting:
