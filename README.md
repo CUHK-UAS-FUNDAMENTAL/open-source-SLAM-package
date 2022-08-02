@@ -46,7 +46,7 @@ Up to now, we have collected and tested four kinds of lidar SLAM, including pure
      width="70%"
      alt="Autonomous UAV system overview"/>
 <br>
-Autonomous UAV system overview
+Figure 1: Autonomous UAV system overview
 </div>
 
 <br/>
@@ -68,7 +68,7 @@ In this project, we take more concern on the lidar or lidar-inertial fusion SLAM
      width="70%"
      alt="Lidar-inertial SLAM system pipeline"/>
 <br>
-Figure 1: Lidar-inertial SLAM system pipeline
+Figure 2: Lidar-inertial SLAM system pipeline
 
 <br/>
 </div>
