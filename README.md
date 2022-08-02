@@ -17,7 +17,7 @@ A open-source SLAM package FOR CUHK UAS fundamental group
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
 
-## Introduction
+## 1. Introduction
 
 ![image](https://user-images.githubusercontent.com/58619142/181909310-37a21609-c84e-4939-9f0b-bd07619eb319.png)
 
@@ -30,7 +30,7 @@ This package presents a set of state-of-art open-sourced lidar-based Simultaneou
 
 Up to now, we have collected and tested with four kinds of lidar SLAM, including pure lidar SLAM algorithms and lidar-inertial SLAM algorithms. Integration of autonomous UAV software and development of low-cost SLAM algorithm will be our future work directions.
 
-## Overall Architecture
+## 2. Overall Architecture
 
 <div align="center">
 <img src="https://user-images.githubusercontent.com/58619142/181913836-e9d73f88-0804-47b0-bddc-5d68426b37e8.png"
@@ -64,7 +64,7 @@ Lidar-inertial SLAM system pipeline
 
 <br/>
 
-## Summary Table
+## 3. Summary Table
 
 Here is a summary table for four lidar SLAM methods in our package. As shown in this table, there are two pure lidar SLAM methods(A-LOAM and F-LOAM) and two lidar-inertial SLAM methods(LIO-SAM and Fast-LIO2). 
 
@@ -79,20 +79,20 @@ Here is a summary table for four lidar SLAM methods in our package. As shown in 
 Table 1: A comparision of different SLAM methods in this package 
 </div>
 
-## Setup Guide
+## 4. Setup Guide
 
 Before starting the test, we strongly recommend that users follow the following steps to configure the computer environment. We have tested these steps under **Ubuntu 64-bit 18.04**.
 
-### Dependency
+### 4.1 Dependency
 
-#### General Dependency
+#### 4.1.1 General Dependency
 
 1. ROS
 ROS Melodic:  [ROS Installation](http://wiki.ros.org/ROS/Installation)
 2. Eigen
 Eigen  >= 3.3.4, Follow [Eigen Installation](http://eigen.tuxfamily.org/index.php?title=Main_Page).
 
-#### A-LOAM & F-LOAM
+#### 4.1.2 A-LOAM & F-LOAM
 
 1. Ceres Solver
 Follow [Ceres Installation](http://ceres-solver.org/installation.html).
@@ -105,7 +105,7 @@ sudo apt-get install ros-melodic-hector-trajectory-server
 ```
 Alternatively, you may remove the hector trajectory server node if trajectory visualization is not needed.
 
-#### LIO-SAM
+#### 4.1.3 LIO-SAM
 
 1. ROS dependency
 
@@ -124,7 +124,7 @@ Again, type the following command:
   sudo apt install libgtsam-dev libgtsam-unstable-dev
   ```
   
-  #### Fast-LIO2
+  #### 4.1.4 Fast-LIO2
   
   1. livox_ros_driver
   Follow [livox_ros_driver Installation](https://github.com/Livox-SDK/livox_ros_driver).
@@ -134,7 +134,7 @@ Again, type the following command:
 - How to source? The easiest way is add the line ``` source $Licox_ros_driver_dir$/devel/setup.bash ``` to the end of file ``` ~/.bashrc ```, where ``` $Licox_ros_driver_dir$ ``` is the directory of the livox ros driver workspace (should be the ``` ws_livox ``` directory if you completely followed the livox official document).
 
   
-### Compilation
+### 4.2 Compilation
 
 Firstly, you need to create a ros workspace and initial it. 
 Open a new terminal and type the following command：
@@ -145,23 +145,55 @@ Open a new terminal and type the following command：
   cd .. && catkin_make
   ```
 
-#### download A-LOAM and build it 
+#### 4.2.1 download A-LOAM and build it 
 Clone the repository and catkin_make:
-```
-    cd ~/catkin_ws/src
-    git clone https://github.com/CUHK-UAS-FUNDAMENTAL/A-LOAM.git
+```bash
+    cd ~/3d_SLAM_ws/src
+    git clone https://github.com/CUHK-UAS-FUNDAMENTAL/A-LOAM.git -b dev_v1.0
     cd ../
     catkin_make
-    source ~/catkin_ws/devel/setup.bash
 ```
 
-## Quick Test
+#### 4.2.2 download F-LOAM and build it 
+Clone the repository and catkin_make:
+```bash
+    cd ~/3d_SLAM_ws/src
+    git clone -b gzx_dev https://github.com/CUHK-UAS-FUNDAMENTAL/F-loam.git 
+    cd ..
+    catkin_make
+```
 
-## Updates
+#### 4.2.3 download LIO-SAM and build it 
+Clone the repository and catkin_make:
+```bash
+ cd ~/3d_SLAM_ws/src
+ git clone -b gzx_dev https://github.com/CUHK-UAS-FUNDAMENTAL/LIO_SAM.git
+ cd ..
+ catkin_make
+```
 
-## TODO
+#### 4.2.4 download Fast-LIO and build it 
+Clone the repository and catkin_make:
+```bash
+   cd ~/3d_SLAM_ws/src
+    git clone https://github.com/hku-mars/FAST_LIO.git
+    cd FAST_LIO
+    git submodule update --init
+    cd ../..
+    catkin_make
+    source devel/setup.bash
+```
+- Remember to source the livox_ros_driver before build (follow 1.3 **livox_ros_driver**)
+- If you want to use a custom build of PCL, add the following line to ~/.bashrc
+```export PCL_ROOT={CUSTOM_PCL_PATH}```
 
-## Related works
+## 5. Quick Test
+
+## 6. Updates
+
+## 7. TODO
+
+## 8. Related works
 
 
 
