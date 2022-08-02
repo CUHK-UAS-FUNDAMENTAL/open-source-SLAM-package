@@ -2,8 +2,7 @@
 A open-source SLAM package FOR CUHK UAS fundamental group
 
 ## Menu
-- [open-source-SLAM-package](#open-source-slam-package)
-  * [Menu](#menu)
+
   * [1. Introduction](#1-introduction)
   * [2. Overall Architecture](#2-overall-architecture)
   * [3. Summary Table](#3-summary-table)
