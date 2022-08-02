@@ -26,7 +26,7 @@ Autonomous UAV system overview
 
 <br/>
 
-The SLAM module plays a role in perceiving and analyzing environment information gathered by navigation sensors. In a GPS-deny environment, Unmanned vehicles depend on the SLAM algorithm to get accuracy localization information. In general, SLAM algorithms can be divided into lidar SLAM and visual SLAM. The visual SLAM algorithm is low-cost and lightweight, which benefits from camera sensors. However, visual SLAM suffers mostly from illumination variation and motion distortion. This is one important reason why engineers prefer lidar SLAM whether in autonomous driving or service robots. 
+The SLAM module plays a role in perceiving and analyzing environment information gathered by navigation sensors. In a GPS-deny environment, Unmanned vehicles depend on the SLAM algorithm to get accuracy localization information. In general, SLAM algorithms can be divided into lidar SLAM and visual SLAM. The visual SLAM algorithm is low-cost and lightweight, which benefits from camera sensors. However, visual SLAM suffers mostly from illumination variation and motion distortion. The lidar SLAM methods, by contrast, have a stable performance in challanging environment. This is one important reason why engineers prefer lidar SLAM whether in autonomous driving or service robots. 
 
 <br/>
 
@@ -49,6 +49,19 @@ Lidar-inertial SLAM system pipeline
 <br/>
 
 ## Summary Table
+
+Here is a summary table for four lidar SLAM methods in our package. As shown in this table, there are two pure lidar SLAM methods(A-LOAM and F-LOAM) and two lidar-inertial SLAM methods(LIO-SAM and Fast-LIO2). 
+
+| SLAM method | Lidar | IMU  | Front-end odometry | Back-end optimization | Loop-closure | feature | Processor |
+| ----------- | ----- | ---- | ------------------ | --------------------- | ------------ | ------- | --------- |
+| A-LOAM      |  &#10004;    | 	&#10006; | Edge-planar | &#10006; | &#10006; | benchmark | Intel |
+| F-LOAM | &#10004; | &#10006; | Edge-planar | &#10006; | &#10006; | Faster than loam | Intel |
+| LIO-SAM | &#10004; | &#10004; | Edge-planar | Factor graph optimization | &#10004; | Can handle aggressive rotation | Intel |
+| Fast-LIO2 | &#10004; | &#10004; | direct | iterated Kalman filter | &#10006; | Lightweight | Intel/ARM |
+
+<div align="center">
+Table 1: A comparision of different SLAM methods in this package 
+</div>
 
 ## Setup Guide
 
