@@ -80,9 +80,9 @@ Here is a summary table for four lidar SLAM methods in our package. As shown in 
 | SLAM method | Lidar | IMU  | Front-end odometry | Back-end optimization | Loop-closure | feature | Processor |
 | ----------- | ----- | ---- | ------------------ | --------------------- | ------------ | ------- | --------- |
 | A-LOAM      |  &#10004;    | 	&#10006; | Edge-planar | &#10006; | &#10006; | benchmark | Intel |
-| F-LOAM | &#10004; | &#10006; | Edge-planar | &#10006; | &#10006; | Faster than loam | Intel |
+| F-LOAM | &#10004; | &#10006; | Edge-planar | &#10006; | &#10006; | Faster than A-LOAM | Intel |
 | LIO-SAM | &#10004; | &#10004; | Edge-planar | Factor graph optimization | &#10004; | Can handle aggressive rotation | Intel |
-| Fast-LIO2 | &#10004; | &#10004; | direct | iterated Kalman filter | &#10006; | Lightweight | Intel/ARM |
+| Fast-LIO2 | &#10004; | &#10004; | Direct | Iterated kalman filter | &#10006; | Lightweight | Intel/ARM |
 
 <div align="center">
 Table 1: A comparison of different SLAM methods in this package 
