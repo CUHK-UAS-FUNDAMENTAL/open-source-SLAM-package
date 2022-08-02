@@ -3,6 +3,7 @@ An open-source SLAM integration package for [*CUHK UAS fundamental group*](http:
 
 ## Menu
 
+
   * [1. Introduction](#1-introduction)
   * [2. Overall Architecture](#2-overall-architecture)
   * [3. Summary Table](#3-summary-table)
@@ -18,12 +19,13 @@ An open-source SLAM integration package for [*CUHK UAS fundamental group*](http:
       - [4.2.3 download LIO-SAM and build it](#423-download-lio-sam-and-build-it)
       - [4.2.4 download Fast-LIO and build it](#424-download-fast-lio-and-build-it)
   * [5. Quick Test](#5-quick-test)
-    + [5.1 Test with PX4 Fundamental  Simulator](#51-test-with-px4-fundmental--simulator)
+    + [5.1 Test with PX4 Fundamental  Simulator](#51-test-with-px4-fundamental--simulator)
   * [6. Updates](#6-updates)
   * [7. TODO](#7-todo)
   * [8. Related works](#8-related-works)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 
 
 ## 1. Introduction
