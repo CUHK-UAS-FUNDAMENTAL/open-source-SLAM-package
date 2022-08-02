@@ -3,16 +3,26 @@ A open-source SLAM package FOR CUHK UAS fundamental group
 
 ## Menu
 - [open-source-SLAM-package](#open-source-slam-package)
-  * [Introduction](#introduction)
-  * [Overall Architecture](#overall-architecture)
-  * [Summary Table](#summary-table)
-  * [Setup Guide](#setup-guide)
-    + [Dependency](#dependency)
-    + [Compilation](#compilation)
-  * [Quick Test](#quick-test)
-  * [Updates](#updates)
-  * [TODO](#todo)
-  * [Related works](#related-works)
+  * [Menu](#menu)
+  * [1. Introduction](#1-introduction)
+  * [2. Overall Architecture](#2-overall-architecture)
+  * [3. Summary Table](#3-summary-table)
+  * [4. Setup Guide](#4-setup-guide)
+    + [4.1 Dependency](#41-dependency)
+      - [4.1.1 General Dependency](#411-general-dependency)
+      - [4.1.2 A-LOAM & F-LOAM](#412-a-loam---f-loam)
+      - [4.1.3 LIO-SAM](#413-lio-sam)
+      - [4.1.4 Fast-LIO2](#414-fast-lio2)
+    + [4.2 Compilation](#42-compilation)
+      - [4.2.1 download A-LOAM and build it](#421-download-a-loam-and-build-it)
+      - [4.2.2 download F-LOAM and build it](#422-download-f-loam-and-build-it)
+      - [4.2.3 download LIO-SAM and build it](#423-download-lio-sam-and-build-it)
+      - [4.2.4 download Fast-LIO and build it](#424-download-fast-lio-and-build-it)
+  * [5. Quick Test](#5-quick-test)
+    + [5.1 Test with PX4 Fundmental  Simulator](#51-test-with-px4-fundmental--simulator)
+  * [6. Updates](#6-updates)
+  * [7. TODO](#7-todo)
+  * [8. Related works](#8-related-works)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
@@ -59,10 +69,10 @@ In this project, we take more concern on the lidar or lidar-inertial fusion SLAM
      width="70%"
      alt="Lidar-inertial SLAM system pipeline"/>
 <br>
-Lidar-inertial SLAM system pipeline
-</div>
+Figure 1: Lidar-inertial SLAM system pipeline
 
 <br/>
+</div>
 
 ## 3. Summary Table
 
@@ -191,16 +201,100 @@ Clone the repository and catkin_make:
 
 ### 5.1 Test with PX4 Fundmental  Simulator
 
-The PX4 Fundmental  Simulator is a UAV simulator developed by [Chen yizhou](https://github.com/JINXER000). If you are not  familiar with this simulator, I recommend that you get start by  following this [wiki](https://github.com/JINXER000/FundamentalSimulatorPX4/wiki).  The intergration of algorithms in simulator will be based on [here](https://github.com/CUHK-UAS-FUNDAMENTAL/FundamentalSimulatorPX4/tree/xtdrone/gzx_dev).
-
+The PX4 Fundmental  Simulator is a UAV simulator developed by [yizhou Chen 陈奕州](https://github.com/JINXER000). If you are not  familiar with this simulator, I recommend that you get start with this [wiki](https://github.com/JINXER000/FundamentalSimulatorPX4/wiki). Now,  the simulator is still under revision. More details can be seen [here](https://github.com/CUHK-UAS-FUNDAMENTAL/FundamentalSimulatorPX4/tree/xtdrone/gzx_dev).
 
 ![simulator environment](https://user-images.githubusercontent.com/58619142/182297052-886127c5-dbb1-455f-8755-402507335062.png)
 
+<div align="center">
+Figure 2:  PX4 fundmental  simulator
+</div>
+
+Users can remote control a small drone to explore simulation environment(e.g., a factory). Meanwhile, the pose of UAV and a point cloud map incremently constucted will be outputed by SLAM algorithms.  The program runs in the following order:
+
+1. start the PX4 simulator
+```bash
+    roslaunch px4 powerplant_lidar.launch
+```
+
+2. run the control python file
+
+```bash
+cd ~/${usr_path_to_XTDrone}/XTDrone/control/keyboard/
+python multirotor_keyboard_control.py iris 1 vel
+```
+
+3. run the communication python file
+```bash
+cd ~/${usr_path_to_XTDrone}/XTDrone/communication/
+python multirotor_communication.py iris 0
+```
+
+4. run lidar SLAM algorithm
+
+ * A-LOAM
+
+```bash
+  cd ~/3d_SLAM_ws
+ source ~/3d_SLAM_ws/devel/setup.bash
+ roslaunch aloam_velodyne aloam_velodyne_VLP_16.launch
+```
+
+ * F-LOAM
+
+```bash
+  cd ~/3d_SLAM_ws
+ source ~/3d_SLAM_ws/devel/setup.bash
+ roslaunch floam floam_gazebo.launch
+```
+
+* LIO-SAM
+
+```bash
+  cd ~/3d_SLAM_ws
+ source ~/3d_SLAM_ws/devel/setup.bash
+roslaunch lio_sam run.launch
+```
+
+* Fast-LIO
+
+```bash
+    cd ~/3d_SLAM_ws
+    source ~/3d_SLAM_ws/devel/setup.bash
+    roslaunch fast_lio mapping_velodyne.launch
+```
+
 ## 6. Updates
+
+2022-08-02 update the readme file.
+
 
 ## 7. TODO
 
+
 ## 8. Related works
+* A-LOAM
+
+[A-LOAM: Advanced implementation of LOAM](https://github.com/HKUST-Aerial-Robotics/A-LOAM)
+
+ * F-LOAM
+
+[F-LOAM : Fast LiDAR Odometry and Mapping](https://github.com/wh200720041/floam)
+ 
+* LIO-SAM
+
+[LIO-SAM: Tightly-coupled Lidar Inertial Odometry via Smoothing and Mapping](https://github.com/TixiaoShan/LIO-SAM)
+
+* Fast-LIO
+
+[ikd-Tree: An Incremental K-D Tree for robotic applications](https://arxiv.org/abs/2102.10808)
+
+[Robust Real-time LiDAR-inertial Initialization](https://github.com/hku-mars/LiDAR_IMU_Init)
+
+[IKFoM: Iterated Kalman Filters on Manifolds](https://github.com/hku-mars/IKFoM)
+
+[FAST-LIO2: Fast Direct LiDAR-inertial Odometry](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9697912)
+
+[FAST-LIO: A Fast, Robust LiDAR-inertial Odometry Package by Tightly-Coupled Iterated Kalman Filter](https://arxiv.org/abs/2010.08196)
 
 
 
