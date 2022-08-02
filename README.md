@@ -90,7 +90,7 @@ Table 1: A comparision of different SLAM methods in this package
 
 ## 4. Setup Guide
 
-Before starting the test, we strongly recommend that users follow the following steps to configure the computer environment. We have tested these steps under **Ubuntu 64-bit 18.04**.
+Before starting the test, we strongly recommend that users follow the following steps to configure the computer environment. These steps have been tested under **Ubuntu 64-bit 18.04**.
 
 ### 4.1 Dependency
 
