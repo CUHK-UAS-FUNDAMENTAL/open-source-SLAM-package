@@ -42,7 +42,7 @@ Up to now, we have collected and tested four kinds of lidar SLAM, including pure
 ## 2. Overall Architecture
 
 <div align="center">
-<img src="https://user-images.githubusercontent.com/58619142/181913836-e9d73f88-0804-47b0-bddc-5d68426b37e8.png"
+<img src="https://user-images.githubusercontent.com/58619142/182334600-64f25a69-e160-4769-8872-6547bf6df097.png"
      width="70%"
      alt="Autonomous UAV system overview"/>
 <br>
