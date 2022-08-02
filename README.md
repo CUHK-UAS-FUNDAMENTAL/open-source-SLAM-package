@@ -1,5 +1,5 @@
 # open-source-SLAM-package
-A open-source SLAM package FOR CUHK UAS fundamental group
+A open-source SLAM intergration package for [*CUHK UAS fundamental group*](http://www.mae.cuhk.edu.hk/~usr/)
 
 ## Menu
 
