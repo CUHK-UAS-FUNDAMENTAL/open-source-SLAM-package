@@ -59,9 +59,9 @@ The SLAM module plays a role in perceiving and analyzing environment information
 <br/>
 
 In this project, we take more concern on the lidar or lidar-inertial fusion SLAM algorithm. The lidar SLAM mostly contains below sub-modules:
-* offline calibration
+* Offline calibration
 * Point cloud preprocessing & sensor data preprocessing
-* motion distortion compensation
+* Motion distortion compensation
 * Front-end lidar odometry or lidar-inertial odometry
 * Back-end optimization 
 * Visualization
@@ -82,10 +82,10 @@ Here is a summary table for four lidar SLAM methods in our package. As shown in 
 
 | SLAM method | Lidar | IMU  | Front-end odometry | Back-end optimization | Loop-closure | feature | Processor |
 | ----------- | ----- | ---- | ------------------ | --------------------- | ------------ | ------- | --------- |
-| A-LOAM      |  &#10004;    | 	&#10006; | Edge-planar | &#10006; | &#10006; | benchmark | Intel |
-| F-LOAM | &#10004; | &#10006; | Edge-planar | &#10006; | &#10006; | Faster than A-LOAM | Intel |
-| LIO-SAM | &#10004; | &#10004; | Edge-planar | Factor graph optimization | &#10004; | Can handle aggressive rotation | Intel |
-| Fast-LIO2 | &#10004; | &#10004; | Direct | Iterated kalman filter | &#10006; | Lightweight | Intel/ARM |
+| A-LOAM      |  &#10004;    | 	&#10006; | Edge-planar | &#10006; | &#10006; | benchmark | x86 |
+| F-LOAM | &#10004; | &#10006; | Edge-planar | &#10006; | &#10006; | Faster than A-LOAM | x86 |
+| LIO-SAM | &#10004; | &#10004; | Edge-planar | Factor graph optimization | &#10004; | Can handle aggressive rotation | x86 |
+| Fast-LIO2 | &#10004; | &#10004; | Direct | Iterated kalman filter | &#10006; | Lightweight | x86/ARM |
 
 <div align="center">
 Table 1: A comparison of different SLAM methods in this package 
@@ -281,8 +281,10 @@ roslaunch lio_sam run.launch
 
 ## 7. TODO
 
+## 8. Q&&A
 
-## 8. Related works
+
+## 9. Related Works
 * A-LOAM
 
 [A-LOAM: Advanced implementation of LOAM](https://github.com/HKUST-Aerial-Robotics/A-LOAM)
@@ -308,6 +310,11 @@ roslaunch lio_sam run.launch
 [FAST-LIO: A Fast, Robust LiDAR-inertial Odometry Package by Tightly-Coupled Iterated Kalman Filter](https://arxiv.org/abs/2010.08196)
 
 
+## 10. Related Publications
 
+1. Zhang J, Singh S. LOAM: Lidar odometry and mapping in real-time[C]//Robotics: Science and Systems. 2014, 2(9): 1-9.
+2. Wang H, Wang C, Chen C L, et al. F-loam: Fast lidar odometry and mapping[C]//2021 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS). IEEE, 2021: 4390-4396.
+3. Shan T, Englot B, Meyers D, et al. Lio-sam: Tightly-coupled lidar inertial odometry via smoothing and mapping[C]//2020 IEEE/RSJ international conference on intelligent robots and systems (IROS). IEEE, 2020: 5135-5142.
+4. Xu W, Cai Y, He D, et al. Fast-lio2: Fast direct lidar-inertial odometry[J]. IEEE Transactions on Robotics, 2022.
 
 
